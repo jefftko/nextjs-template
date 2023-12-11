@@ -31,6 +31,8 @@ public/sitemap-*.xml
 # cache
 .swc/
 
+*.swp
+
 # production
 /build
 
