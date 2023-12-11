@@ -16,7 +16,7 @@ const Main = (props: IMainProps) => (
       <header className="border-b border-gray-300">
         <div className="pb-8 pt-16">
           <h1 className="text-3xl font-bold text-gray-900">
-            {AppConfig.title}
+            {AppConfig.title}asdf
           </h1>
           <h2 className="text-xl">{AppConfig.description}</h2>
         </div>
