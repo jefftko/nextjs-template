@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from "react";
 
 type AccordionpProps = {
   children: React.ReactNode;
@@ -11,7 +11,7 @@ type AccordionpProps = {
 
 const Accordion = ({
   children,
-  tag = 'li',
+  tag = "li",
   title,
   active = false,
 }: AccordionpProps) => {
@@ -45,7 +45,7 @@ const Accordion = ({
             height="2"
             rx="1"
             className={`origin-center transition duration-200 ease-out${
-              accordionOpen && '!rotate-180'
+              accordionOpen && "!rotate-180"
             }`}
           />
           <rect
@@ -54,7 +54,7 @@ const Accordion = ({
             height="2"
             rx="1"
             className={`origin-center rotate-90 transition duration-200 ease-out${
-              accordionOpen && '!rotate-180'
+              accordionOpen && "!rotate-180"
             }`}
           />
         </svg>

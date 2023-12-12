@@ -1,6 +1,6 @@
-import { auth } from '@clerk/nextjs';
-import { redirect } from 'next/navigation';
-import React from 'react';
+import { auth } from "@clerk/nextjs";
+import { redirect } from "next/navigation";
+import React from "react";
 
 export default function CenteredLayout({
   children, // will be a page or nested layout
@@ -10,7 +10,7 @@ export default function CenteredLayout({
   const { userId } = auth();
 
   if (userId) {
-    redirect('/dashboard');
+    redirect("/dashboard");
   }
 
   return (

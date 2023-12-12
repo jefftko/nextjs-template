@@ -1,14 +1,14 @@
-import { eq, sql } from 'drizzle-orm';
-import { NextResponse } from 'next/server';
-import { z } from 'zod';
+import { eq, sql } from "drizzle-orm";
+import { NextResponse } from "next/server";
+import { z } from "zod";
 
-import { db } from '@/libs/DB';
-import { guestbookTable } from '@/models/Schema';
+import { db } from "@/libs/DB";
+import { guestbookTable } from "@/models/Schema";
 import {
   DeleteGuestbookSchema,
   EditGuestbookSchema,
   GuestbookSchema,
-} from '@/validations/GuestbookValidation';
+} from "@/validations/GuestbookValidation";
 
 export const POST = async (request: Request) => {
   try {

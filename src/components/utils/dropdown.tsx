@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { Transition } from '@headlessui/react';
-import { useState } from 'react';
+import { Transition } from "@headlessui/react";
+import { useState } from "react";
 
 type DropdownProps = {
   children: React.ReactNode;

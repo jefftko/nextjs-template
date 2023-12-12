@@ -1,7 +1,7 @@
-import Link from 'next/link';
+import Link from "next/link";
 
-import { LogOutButton } from '@/components/LogOutButton';
-import { AppConfig } from '@/utils/AppConfig';
+import { LogOutButton } from "@/components/LogOutButton";
+import { AppConfig } from "@/utils/AppConfig";
 
 export default function DashboardLayout({
   children, // will be a page or nested layout
@@ -54,7 +54,7 @@ export default function DashboardLayout({
         <main>{children}</main>
 
         <footer className="border-t border-gray-300 py-8 text-center text-sm">
-          © Copyright {new Date().getFullYear()} {AppConfig.title}. Made with{' '}
+          © Copyright {new Date().getFullYear()} {AppConfig.title}. Made with{" "}
           <a href="https://creativedesignsguru.com">CreativeDesignsGuru</a>.
           {/*
            * PLEASE READ THIS SECTION

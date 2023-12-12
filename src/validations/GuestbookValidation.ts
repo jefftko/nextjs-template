@@ -1,4 +1,4 @@
-import { z } from 'zod';
+import { z } from "zod";
 
 export const GuestbookSchema = z.object({
   username: z.string().nonempty(),

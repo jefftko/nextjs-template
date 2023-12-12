@@ -1,16 +1,16 @@
-import type { Metadata } from 'next';
-import Image from 'next/image';
+import type { Metadata } from "next";
+import Image from "next/image";
 
-import { DeleteGuestbookEntry } from '@/components/DeleteGuestbookEntry';
-import { EditableGuestbookEntry } from '@/components/EditableGuestbookEntry';
-import { GuestbookForm } from '@/components/GuestbookForm';
-import { db } from '@/libs/DB';
-import { guestbookTable } from '@/models/Schema';
-import { Main } from '@/templates/Main';
+import { DeleteGuestbookEntry } from "@/components/DeleteGuestbookEntry";
+import { EditableGuestbookEntry } from "@/components/EditableGuestbookEntry";
+import { GuestbookForm } from "@/components/GuestbookForm";
+import { db } from "@/libs/DB";
+import { guestbookTable } from "@/models/Schema";
+import { Main } from "@/templates/Main";
 
 export const metadata: Metadata = {
-  title: 'Guestbook',
-  description: 'An example of CRUD operation',
+  title: "Guestbook",
+  description: "An example of CRUD operation",
 };
 
 const Guestbook = async () => {
@@ -35,7 +35,7 @@ const Guestbook = async () => {
       </div>
 
       <div className="mt-2 text-center text-sm">
-        Database powered by{' '}
+        Database powered by{" "}
         <a
           href="https://turso.tech/?utm_source=nextjsstarterbp"
           target="_blank"
@@ -57,6 +57,6 @@ const Guestbook = async () => {
   );
 };
 
-export const dynamic = 'force-dynamic';
+export const dynamic = "force-dynamic";
 
 export default Guestbook;

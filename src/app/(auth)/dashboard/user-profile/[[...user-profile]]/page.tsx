@@ -1,10 +1,10 @@
-import { UserProfile } from '@clerk/nextjs';
-import type { Metadata } from 'next';
+import { UserProfile } from "@clerk/nextjs";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'User profile',
+  title: "User profile",
   description:
-    'Seamlessly sign in to your account with our user-friendly login process.',
+    "Seamlessly sign in to your account with our user-friendly login process.",
 };
 
 const UserProfilePage = () => (
