@@ -8,6 +8,7 @@ import 'aos/dist/aos.css'
 
 import { AppConfig } from '@/utils/AppConfig';
 import Header from '@/components/ui/header/default';
+import Footer from '@/components/ui/footer';
 
 
 type IMainProps = {
@@ -29,6 +30,7 @@ const Main = (props: IMainProps) => {
     {props.meta}
     <Header />
       <main>{props.children}</main>
+    <Footer />
   </>
 )};
 
