@@ -1,17 +1,14 @@
 // import Image from 'next/image';
 
 // import { Sponsors } from '@/components/Sponsors';
+import Cta from '@/components/cta'
+import FeaturesBlocks from '@/components/features/blocks'
+import FeaturesHome from '@/components/features/home'
+import FeaturesWorld from '@/components/features/world'
+import Hero from '@/components/hero/home'
+import News from '@/components/news'
 import { Meta } from '@/layouts/Meta'
 import { Main } from '@/templates/Main'
-import Hero from '@/components/hero/home'
-import FeaturesHome from '@/components/features/home'
-import FeaturesBlocks from '@/components/features/blocks'
-import FeaturesWorld from '@/components/features/world'
-import News from '@/components/news'
-import Cta from '@/components/cta'
-
-
-
 
 const Index = () => (
   <Main
@@ -26,9 +23,8 @@ const Index = () => (
     <FeaturesHome />
     <FeaturesBlocks />
     <FeaturesWorld />
-     <News />
-      <Cta />
-
+    <News />
+    <Cta />
   </Main>
 )
 

@@ -1,5 +1,5 @@
-import Image, { StaticImageData } from 'next/image'
-
+import type { StaticImageData } from 'next/image'
+import Image from 'next/image'
 
 interface PostImageProps {
   alt: string
@@ -11,9 +11,9 @@ export default function PostImage({ alt, caption, ...props }: PostImageProps) {
   return (
     <figure>
       <Image className="w-full rounded" {...props} alt={alt} />
-      {caption &&
-        <figcaption className="text-sm text-center text-gray-500 mt-3">{caption}</figcaption>
-      }
+      {caption && (
+        <figcaption className="mt-3 text-center text-sm text-gray-500">{caption}</figcaption>
+      )}
     </figure>
   )
 }
