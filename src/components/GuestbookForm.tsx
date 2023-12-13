@@ -1,20 +1,20 @@
-"use client";
+'use client'
 
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useRouter } from "next/navigation";
-import { useForm } from "react-hook-form";
-import type { z } from "zod";
+import { zodResolver } from '@hookform/resolvers/zod'
+import { useRouter } from 'next/navigation'
+import { useForm } from 'react-hook-form'
+import type { z } from 'zod'
 
-import { GuestbookSchema } from "@/validations/GuestbookValidation";
+import { GuestbookSchema } from '@/validations/GuestbookValidation'
 
 type IGuestbookFormProps =
   | {
-      edit: true;
-      id: number;
-      defaultValues: z.infer<typeof GuestbookSchema>;
-      handleStopEditing: () => void;
+      edit: true
+      id: number
+      defaultValues: z.infer<typeof GuestbookSchema>
+      handleStopEditing: () => void
     }
-  | { edit?: false };
+  | { edit?: false }
 
 const GuestbookForm = (props: IGuestbookFormProps) => {
   const {
@@ -26,38 +26,38 @@ const GuestbookForm = (props: IGuestbookFormProps) => {
   } = useForm<z.infer<typeof GuestbookSchema>>({
     resolver: zodResolver(GuestbookSchema),
     defaultValues: props.edit ? props.defaultValues : undefined,
-  });
-  const router = useRouter();
+  })
+  const router = useRouter()
 
   const handleCreate = handleSubmit(async (data) => {
     if (props.edit) {
       await fetch(`/api/guestbook`, {
-        method: "PUT",
+        method: 'PUT',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           id: props.id,
           ...data,
         }),
-      });
+      })
 
-      props.handleStopEditing();
+      props.handleStopEditing()
     } else {
       await fetch(`/api/guestbook`, {
-        method: "POST",
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify(data),
-      });
+      })
 
-      setFocus("username");
-      reset();
+      setFocus('username')
+      reset()
     }
 
-    router.refresh();
-  });
+    router.refresh()
+  })
 
   return (
     <form onSubmit={handleCreate}>
@@ -67,13 +67,11 @@ const GuestbookForm = (props: IGuestbookFormProps) => {
           <input
             id="username"
             className="mt-2 w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 focus:outline-none focus:ring focus:ring-blue-300/50"
-            {...register("username")}
+            {...register('username')}
           />
         </label>
         {errors.username?.message && (
-          <div className="my-2 text-xs italic text-red-500">
-            {errors.username?.message}
-          </div>
+          <div className="my-2 text-xs italic text-red-500">{errors.username?.message}</div>
         )}
       </div>
 
@@ -83,13 +81,11 @@ const GuestbookForm = (props: IGuestbookFormProps) => {
           <input
             id="body"
             className="mt-2 w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 focus:outline-none focus:ring focus:ring-blue-300/50"
-            {...register("body")}
+            {...register('body')}
           />
         </label>
         {errors.body?.message && (
-          <div className="my-2 text-xs italic text-red-500">
-            {errors.body?.message}
-          </div>
+          <div className="my-2 text-xs italic text-red-500">{errors.body?.message}</div>
         )}
       </div>
 
@@ -102,7 +98,7 @@ const GuestbookForm = (props: IGuestbookFormProps) => {
         </button>
       </div>
     </form>
-  );
-};
+  )
+}
 
-export { GuestbookForm };
+export { GuestbookForm }

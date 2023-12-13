@@ -1,11 +1,11 @@
-"use client";
+'use client'
 
-import { useUser } from "@clerk/nextjs";
+import { useUser } from '@clerk/nextjs'
 
 const Hello = () => {
-  const { user } = useUser();
+  const { user } = useUser()
 
-  return <p>👋 Hello {user?.primaryEmailAddress?.toString()}</p>;
-};
+  return <p>👋 Hello {user?.primaryEmailAddress?.toString()}</p>
+}
 
-export { Hello };
+export { Hello }

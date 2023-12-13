@@ -1,21 +1,19 @@
-import Link from "next/link";
+import Link from 'next/link'
 
-import { LogOutButton } from "@/components/LogOutButton";
-import { AppConfig } from "@/utils/AppConfig";
+import { LogOutButton } from '@/components/LogOutButton'
+import { AppConfig } from '@/utils/AppConfig'
 
 export default function DashboardLayout({
   children, // will be a page or nested layout
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
     <div className="w-full px-1 text-gray-700 antialiased">
       <div className="mx-auto max-w-screen-md">
         <header className="border-b border-gray-300">
           <div className="pb-8 pt-16">
-            <h1 className="text-3xl font-bold text-gray-900">
-              {AppConfig.title}
-            </h1>
+            <h1 className="text-3xl font-bold text-gray-900">{AppConfig.title}</h1>
             <h2 className="text-xl">{AppConfig.description}</h2>
           </div>
 
@@ -54,7 +52,7 @@ export default function DashboardLayout({
         <main>{children}</main>
 
         <footer className="border-t border-gray-300 py-8 text-center text-sm">
-          © Copyright {new Date().getFullYear()} {AppConfig.title}. Made with{" "}
+          © Copyright {new Date().getFullYear()} {AppConfig.title}. Made with{' '}
           <a href="https://creativedesignsguru.com">CreativeDesignsGuru</a>.
           {/*
            * PLEASE READ THIS SECTION
@@ -65,5 +63,5 @@ export default function DashboardLayout({
         </footer>
       </div>
     </div>
-  );
+  )
 }

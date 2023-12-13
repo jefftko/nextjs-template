@@ -1,13 +1,9 @@
-import Link from "next/link";
+import Link from 'next/link'
 
 export default function Logo() {
   return (
     <Link href="/" className="block" aria-label="Cruip">
-      <svg
-        className="w-8 h-8"
-        viewBox="0 0 32 32"
-        xmlns="http://www.w3.org/2000/svg"
-      >
+      <svg className="h-8 w-8" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <radialGradient
             cx="21.152%"
@@ -22,14 +18,8 @@ export default function Logo() {
             <stop stopColor="#338CF5" offset="100%" />
           </radialGradient>
         </defs>
-        <rect
-          width="32"
-          height="32"
-          rx="16"
-          fill="url(#footer-logo)"
-          fillRule="nonzero"
-        />
+        <rect width="32" height="32" rx="16" fill="url(#footer-logo)" fillRule="nonzero" />
       </svg>
     </Link>
-  );
+  )
 }

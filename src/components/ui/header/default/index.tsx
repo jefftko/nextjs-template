@@ -1,47 +1,52 @@
-"use client";
+'use client'
 
-import { useState, useEffect } from "react";
+import Link from 'next/link'
+import { useEffect, useState } from 'react'
 
-import Link from "next/link";
-import Logo from "./logo";
-import Dropdown from "@/components/utils/dropdown";
-import MobileMenu from "./mobile-menu";
+import Dropdown from '@/components/utils/dropdown'
+
+import Logo from './logo'
+import MobileMenu from './mobile-menu'
 
 export default function Header() {
-  const [top, setTop] = useState<boolean>(true);
+  const [top, setTop] = useState<boolean>(true)
 
   // detect whether user has scrolled the page down by 10px
   const scrollHandler = () => {
-    window.pageYOffset > 10 ? setTop(false) : setTop(true);
-  };
+    if (window.pageYOffset > 10) {
+      setTop(false)
+    } else {
+      setTop(true)
+    }
+  }
 
   useEffect(() => {
-    scrollHandler();
-    window.addEventListener("scroll", scrollHandler);
-    return () => window.removeEventListener("scroll", scrollHandler);
-  }, [top]);
+    scrollHandler()
+    window.addEventListener('scroll', scrollHandler)
+    return () => window.removeEventListener('scroll', scrollHandler)
+  }, [top])
 
   return (
     <header
-      className={`fixed w-full z-30 transition duration-300 ease-in-out ${
-        !top ? "bg-white md:bg-white/90 backdrop-blur-sm shadow-lg" : ""
+      className={`fixed z-30 w-full transition duration-300 ease-in-out ${
+        !top ? 'bg-white shadow-lg backdrop-blur-sm md:bg-white/90' : ''
       }`}
     >
-      <div className="max-w-6xl mx-auto px-5 sm:px-6">
-        <div className="flex items-center justify-between h-16 md:h-20">
+      <div className="mx-auto max-w-6xl px-5 sm:px-6">
+        <div className="flex h-16 items-center justify-between md:h-20">
           {/* Site branding */}
-          <div className="shrink-0 mr-4">
+          <div className="mr-4 shrink-0">
             <Logo />
           </div>
 
           {/* Desktop navigation */}
           <nav className="hidden md:flex md:grow">
             {/* Desktop menu links */}
-            <ul className="flex grow justify-end flex-wrap items-center">
+            <ul className="flex grow flex-wrap items-center justify-end">
               <li>
                 <Link
                   href="/pricing"
-                  className="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out"
+                  className="flex items-center px-3 py-2 text-gray-600 transition duration-150 ease-in-out hover:text-gray-900 lg:px-5"
                 >
                   Pricing
                 </Link>
@@ -49,7 +54,7 @@ export default function Header() {
               <li>
                 <Link
                   href="/about"
-                  className="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out"
+                  className="flex items-center px-3 py-2 text-gray-600 transition duration-150 ease-in-out hover:text-gray-900 lg:px-5"
                 >
                   About us
                 </Link>
@@ -57,7 +62,7 @@ export default function Header() {
               <li>
                 <Link
                   href="/tutorials"
-                  className="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out"
+                  className="flex items-center px-3 py-2 text-gray-600 transition duration-150 ease-in-out hover:text-gray-900 lg:px-5"
                 >
                   Tutorials
                 </Link>
@@ -65,7 +70,7 @@ export default function Header() {
               <li>
                 <Link
                   href="/blog"
-                  className="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out"
+                  className="flex items-center px-3 py-2 text-gray-600 transition duration-150 ease-in-out hover:text-gray-900 lg:px-5"
                 >
                   Blog
                 </Link>
@@ -76,7 +81,7 @@ export default function Header() {
                 <li>
                   <Link
                     href="/documentation"
-                    className="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight"
+                    className="flex px-5 py-2 text-sm font-medium leading-tight text-gray-600 hover:text-gray-900"
                   >
                     Documentation
                   </Link>
@@ -84,7 +89,7 @@ export default function Header() {
                 <li>
                   <Link
                     href="/support"
-                    className="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight"
+                    className="flex px-5 py-2 text-sm font-medium leading-tight text-gray-600 hover:text-gray-900"
                   >
                     Support center
                   </Link>
@@ -92,7 +97,7 @@ export default function Header() {
                 <li>
                   <Link
                     href="/404"
-                    className="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight"
+                    className="flex px-5 py-2 text-sm font-medium leading-tight text-gray-600 hover:text-gray-900"
                   >
                     404
                   </Link>
@@ -101,11 +106,11 @@ export default function Header() {
             </ul>
 
             {/* Desktop sign in links */}
-            <ul className="flex grow justify-end flex-wrap items-center">
+            <ul className="flex grow flex-wrap items-center justify-end">
               <li>
                 <Link
                   href="/signin"
-                  className="font-medium text-gray-600 hover:text-gray-900 px-5 py-3 flex items-center transition duration-150 ease-in-out"
+                  className="flex items-center px-5 py-3 font-medium text-gray-600 transition duration-150 ease-in-out hover:text-gray-900"
                 >
                   Sign in
                 </Link>
@@ -113,11 +118,11 @@ export default function Header() {
               <li>
                 <Link
                   href="/signup"
-                  className="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 ml-3"
+                  className="btn-sm ml-3 bg-gray-900 text-gray-200 hover:bg-gray-800"
                 >
                   <span>Sign up</span>
                   <svg
-                    className="w-3 h-3 fill-current text-gray-400 shrink-0 ml-2 -mr-1"
+                    className="-mr-1 ml-2 h-3 w-3 shrink-0 fill-current text-gray-400"
                     viewBox="0 0 12 12"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -135,5 +140,5 @@ export default function Header() {
         </div>
       </div>
     </header>
-  );
+  )
 }

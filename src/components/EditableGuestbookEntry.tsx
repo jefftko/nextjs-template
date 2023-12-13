@@ -1,25 +1,25 @@
-"use client";
+'use client'
 
-import { useState } from "react";
+import { useState } from 'react'
 
-import { GuestbookForm } from "./GuestbookForm";
+import { GuestbookForm } from './GuestbookForm'
 
 type IEditableGuestbookEntryProps = {
-  id: number;
-  username: string;
-  body: string;
-};
+  id: number
+  username: string
+  body: string
+}
 
 const EditableGuestbookEntry = (props: IEditableGuestbookEntryProps) => {
-  const [isEditing, setIsEditing] = useState(false);
+  const [isEditing, setIsEditing] = useState(false)
 
   const handleEdit = () => {
-    setIsEditing((value) => !value);
-  };
+    setIsEditing((value) => !value)
+  }
 
   const handleStopEditing = () => {
-    setIsEditing(false);
-  };
+    setIsEditing(false)
+  }
 
   return (
     <>
@@ -27,7 +27,7 @@ const EditableGuestbookEntry = (props: IEditableGuestbookEntryProps) => {
         type="button"
         aria-label="edit"
         onClick={() => {
-          handleEdit();
+          handleEdit()
         }}
       >
         <svg
@@ -55,13 +55,13 @@ const EditableGuestbookEntry = (props: IEditableGuestbookEntryProps) => {
           />
         ) : (
           <>
-            <span className="text-gray-500">{props.username}:</span>{" "}
+            <span className="text-gray-500">{props.username}:</span>{' '}
             <span className="text-gray-800">{props.body}</span>
           </>
         )}
       </div>
     </>
-  );
-};
+  )
+}
 
-export { EditableGuestbookEntry };
+export { EditableGuestbookEntry }

@@ -1,27 +1,22 @@
-"use client";
+'use client'
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from 'react'
 
 type AccordionpProps = {
-  children: React.ReactNode;
-  tag?: string;
-  title: string;
-  active?: boolean;
-};
+  children: React.ReactNode
+  tag?: string
+  title: string
+  active?: boolean
+}
 
-const Accordion = ({
-  children,
-  tag = "li",
-  title,
-  active = false,
-}: AccordionpProps) => {
-  const [accordionOpen, setAccordionOpen] = useState<boolean>(false);
-  const accordion = useRef<HTMLDivElement>(null);
-  const Component = tag as keyof JSX.IntrinsicElements;
+const Accordion = ({ children, tag = 'li', title, active = false }: AccordionpProps) => {
+  const [accordionOpen, setAccordionOpen] = useState<boolean>(false)
+  const accordion = useRef<HTMLDivElement>(null)
+  const Component = tag as keyof JSX.IntrinsicElements
 
   useEffect(() => {
-    setAccordionOpen(active);
-  }, [accordion, active]);
+    setAccordionOpen(active)
+  }, [accordion, active])
 
   return (
     <Component>
@@ -29,8 +24,8 @@ const Accordion = ({
         type="button"
         className="flex w-full items-center border-t border-gray-200 py-5 text-left text-lg font-medium"
         onClick={(e) => {
-          e.preventDefault();
-          setAccordionOpen(!accordionOpen);
+          e.preventDefault()
+          setAccordionOpen(!accordionOpen)
         }}
         aria-expanded={accordionOpen}
       >
@@ -45,7 +40,7 @@ const Accordion = ({
             height="2"
             rx="1"
             className={`origin-center transition duration-200 ease-out${
-              accordionOpen && "!rotate-180"
+              accordionOpen && '!rotate-180'
             }`}
           />
           <rect
@@ -54,7 +49,7 @@ const Accordion = ({
             height="2"
             rx="1"
             className={`origin-center rotate-90 transition duration-200 ease-out${
-              accordionOpen && "!rotate-180"
+              accordionOpen && '!rotate-180'
             }`}
           />
         </svg>
@@ -72,7 +67,7 @@ const Accordion = ({
         <p className="pb-5">{children}</p>
       </div>
     </Component>
-  );
-};
+  )
+}
 
-export default Accordion;
+export default Accordion

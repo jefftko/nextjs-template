@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from 'next/image'
 
 const Sponsors = () => (
   <table className="border-collapse">
@@ -58,12 +58,7 @@ const Sponsors = () => (
         </td>
         <td className="border-2 border-gray-300 p-3">
           <a href="https://upstash.com/?utm_source=nextjs-boilerplate">
-            <Image
-              src="/assets/images/redis.png"
-              alt="Upstash"
-              width={260}
-              height={224}
-            />
+            <Image src="/assets/images/redis.png" alt="Upstash" width={260} height={224} />
           </a>
         </td>
       </tr>
@@ -81,6 +76,6 @@ const Sponsors = () => (
       </tr>
     </tbody>
   </table>
-);
+)
 
-export { Sponsors };
+export { Sponsors }

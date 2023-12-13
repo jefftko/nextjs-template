@@ -1,40 +1,40 @@
-"use client";
+'use client'
 
-import { useState, useRef, useEffect } from "react";
-import { Transition } from "@headlessui/react";
-import Link from "next/link";
+import { Transition } from '@headlessui/react'
+import Link from 'next/link'
+import { useEffect, useRef, useState } from 'react'
 
 export default function MobileMenu() {
-  const [mobileNavOpen, setMobileNavOpen] = useState<boolean>(false);
+  const [mobileNavOpen, setMobileNavOpen] = useState<boolean>(false)
 
-  const trigger = useRef<HTMLButtonElement>(null);
-  const mobileNav = useRef<HTMLDivElement>(null);
+  const trigger = useRef<HTMLButtonElement>(null)
+  const mobileNav = useRef<HTMLDivElement>(null)
 
   // close the mobile menu on click outside
   useEffect(() => {
     const clickHandler = ({ target }: { target: EventTarget | null }): void => {
-      if (!mobileNav.current || !trigger.current) return;
+      if (!mobileNav.current || !trigger.current) return
       if (
         !mobileNavOpen ||
         mobileNav.current.contains(target as Node) ||
         trigger.current.contains(target as Node)
       )
-        return;
-      setMobileNavOpen(false);
-    };
-    document.addEventListener("click", clickHandler);
-    return () => document.removeEventListener("click", clickHandler);
-  });
+        return
+      setMobileNavOpen(false)
+    }
+    document.addEventListener('click', clickHandler)
+    return () => document.removeEventListener('click', clickHandler)
+  })
 
   // close the mobile menu if the esc key is pressed
   useEffect(() => {
     const keyHandler = ({ keyCode }: { keyCode: number }): void => {
-      if (!mobileNavOpen || keyCode !== 27) return;
-      setMobileNavOpen(false);
-    };
-    document.addEventListener("keydown", keyHandler);
-    return () => document.removeEventListener("keydown", keyHandler);
-  });
+      if (!mobileNavOpen || keyCode !== 27) return
+      setMobileNavOpen(false)
+    }
+    document.addEventListener('keydown', keyHandler)
+    return () => document.removeEventListener('keydown', keyHandler)
+  })
 
   return (
     <div className="flex md:hidden">
@@ -42,14 +42,14 @@ export default function MobileMenu() {
       <button
         type="button"
         ref={trigger}
-        className={`hamburger ${mobileNavOpen && "active"}`}
+        className={`hamburger ${mobileNavOpen && 'active'}`}
         aria-controls="mobile-nav"
         aria-expanded={mobileNavOpen}
         onClick={() => setMobileNavOpen(!mobileNavOpen)}
       >
         <span className="sr-only">Menu</span>
         <svg
-          className="w-6 h-6 fill-current text-gray-900"
+          className="h-6 w-6 fill-current text-gray-900"
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -59,13 +59,13 @@ export default function MobileMenu() {
         </svg>
       </button>
 
-      {/*Mobile navigation */}
+      {/* Mobile navigation */}
       <div ref={mobileNav}>
         <Transition
           show={mobileNavOpen}
           as="nav"
           id="mobile-nav"
-          className="absolute top-full h-screen pb-16 z-20 left-0 w-full overflow-scroll bg-white"
+          className="absolute left-0 top-full z-20 h-screen w-full overflow-scroll bg-white pb-16"
           enter="transition ease-out duration-200 transform"
           enterFrom="opacity-0 -translate-y-2"
           enterTo="opacity-100 translate-y-0"
@@ -77,7 +77,7 @@ export default function MobileMenu() {
             <li>
               <Link
                 href="/pricing"
-                className="flex text-gray-600 hover:text-gray-900 py-2"
+                className="flex py-2 text-gray-600 hover:text-gray-900"
                 onClick={() => setMobileNavOpen(false)}
               >
                 Pricing
@@ -86,7 +86,7 @@ export default function MobileMenu() {
             <li>
               <Link
                 href="/about"
-                className="flex text-gray-600 hover:text-gray-900 py-2"
+                className="flex py-2 text-gray-600 hover:text-gray-900"
                 onClick={() => setMobileNavOpen(false)}
               >
                 About us
@@ -95,7 +95,7 @@ export default function MobileMenu() {
             <li>
               <Link
                 href="/tutorials"
-                className="flex text-gray-600 hover:text-gray-900 py-2"
+                className="flex py-2 text-gray-600 hover:text-gray-900"
                 onClick={() => setMobileNavOpen(false)}
               >
                 Tutorials
@@ -104,16 +104,24 @@ export default function MobileMenu() {
             <li>
               <Link
                 href="/blog"
-                className="flex text-gray-600 hover:text-gray-900 py-2"
+                className="flex py-2 text-gray-600 hover:text-gray-900"
                 onClick={() => setMobileNavOpen(false)}
               >
                 Blog
               </Link>
             </li>
-            <li className="py-2 my-2 border-t border-b border-gray-200">
+            <li className="my-2 border-y border-gray-200 py-2">
               <span
-                className="flex text-gray-600 hover:text-gray-900 py-2"
+                role="button"
+                tabIndex={0}
+                className="flex py-2 text-gray-600 hover:text-gray-900"
                 onClick={() => setMobileNavOpen(false)}
+                onKeyDown={(event) => {
+                  // Trigger click on Enter or Space key press
+                  if (event.key === 'Enter' || event.key === 'Space') {
+                    setMobileNavOpen(false)
+                  }
+                }}
               >
                 Resources
               </span>
@@ -121,7 +129,7 @@ export default function MobileMenu() {
                 <li>
                   <Link
                     href="/documentation"
-                    className="text-sm flex font-medium text-gray-600 hover:text-gray-900 py-2"
+                    className="flex py-2 text-sm font-medium text-gray-600 hover:text-gray-900"
                     onClick={() => setMobileNavOpen(false)}
                   >
                     Documentation
@@ -130,7 +138,7 @@ export default function MobileMenu() {
                 <li>
                   <Link
                     href="/support"
-                    className="text-sm flex font-medium text-gray-600 hover:text-gray-900 py-2"
+                    className="flex py-2 text-sm font-medium text-gray-600 hover:text-gray-900"
                     onClick={() => setMobileNavOpen(false)}
                   >
                     Support center
@@ -139,7 +147,7 @@ export default function MobileMenu() {
                 <li>
                   <Link
                     href="/404"
-                    className="text-sm flex font-medium text-gray-600 hover:text-gray-900 py-2"
+                    className="flex py-2 text-sm font-medium text-gray-600 hover:text-gray-900"
                     onClick={() => setMobileNavOpen(false)}
                   >
                     404
@@ -150,7 +158,7 @@ export default function MobileMenu() {
             <li>
               <Link
                 href="/signin"
-                className="flex font-medium w-full text-gray-600 hover:text-gray-900 py-2 justify-center"
+                className="flex w-full justify-center py-2 font-medium text-gray-600 hover:text-gray-900"
                 onClick={() => setMobileNavOpen(false)}
               >
                 Sign in
@@ -159,12 +167,12 @@ export default function MobileMenu() {
             <li>
               <Link
                 href="/signup"
-                className="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 w-full my-2"
+                className="btn-sm my-2 w-full bg-gray-900 text-gray-200 hover:bg-gray-800"
                 onClick={() => setMobileNavOpen(false)}
               >
                 <span>Sign up</span>
                 <svg
-                  className="w-3 h-3 fill-current text-gray-400 shrink-0 ml-2 -mr-1"
+                  className="-mr-1 ml-2 h-3 w-3 shrink-0 fill-current text-gray-400"
                   viewBox="0 0 12 12"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -180,5 +188,5 @@ export default function MobileMenu() {
         </Transition>
       </div>
     </div>
-  );
+  )
 }

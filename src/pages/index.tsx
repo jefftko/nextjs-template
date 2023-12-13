@@ -1,8 +1,8 @@
-//import Image from 'next/image';
+// import Image from 'next/image';
 
-//import { Sponsors } from '@/components/Sponsors';
-import { Meta } from "@/layouts/Meta";
-import { Main } from "@/templates/Main";
+// import { Sponsors } from '@/components/Sponsors';
+import { Meta } from '@/layouts/Meta'
+import { Main } from '@/templates/Main'
 
 const Index = () => (
   <Main
@@ -15,6 +15,6 @@ const Index = () => (
   >
     adf
   </Main>
-);
+)
 
-export default Index;
+export default Index

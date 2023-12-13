@@ -1,15 +1,15 @@
-"use client";
+'use client'
 
-import { Transition } from "@headlessui/react";
-import { useState } from "react";
+import { Transition } from '@headlessui/react'
+import { useState } from 'react'
 
 type DropdownProps = {
-  children: React.ReactNode;
-  title: string;
-};
+  children: React.ReactNode
+  title: string
+}
 
 export default function Dropdown({ children, title }: DropdownProps) {
-  const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
+  const [dropdownOpen, setDropdownOpen] = useState<boolean>(false)
 
   return (
     <li
@@ -48,5 +48,5 @@ export default function Dropdown({ children, title }: DropdownProps) {
         {children}
       </Transition>
     </li>
-  );
+  )
 }
