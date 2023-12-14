@@ -269,8 +269,10 @@ export default function TestimonialsCarousel() {
               <div className="rounded border-2 border-gray-200 bg-white transition-all">
                 <div className="relative z-10 flex flex-col items-start" ref={testimonials}>
                   {items.map((item, index) => (
+                    // eslint-disable-next-line react/no-array-index-key
                     <Transition
-                      key={index}
+                      key={item.name}
+                      // key={`tc-item-${index}`}
                       show={active === index}
                       className="mx-4 w-full px-12 py-8 pt-20 text-center md:mx-0"
                       enter="transition ease-in-out duration-700 transform order-first"
