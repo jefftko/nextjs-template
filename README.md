@@ -1,6 +1,5 @@
 # Boilerplate and Starter for Next JS 14+, Tailwind CSS 3.3 and TypeScript
 
-
 ### Project structure
 
 ```shell
@@ -33,4 +32,3 @@
 ├── tailwind.config.js              # Tailwind CSS configuration
 └── tsconfig.json                   # TypeScript configuration
 ```
-

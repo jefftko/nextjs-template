@@ -39,7 +39,8 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "@/public/*": ["./public/*"]
+      "@/public/*": ["./public/*"],
+      "contentlayer/generated": ["./.contentlayer/generated"]
     },
     "plugins": [
       {
@@ -54,6 +55,7 @@
     "**/*.tsx",
     ".storybook/*.ts",
     ".next/types/**/*.ts",
-    "src/libs/Env.mjs"
+    "src/libs/Env.mjs",
+    ".contentlayer/generated"
   ]
 }
