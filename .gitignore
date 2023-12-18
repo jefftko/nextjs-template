@@ -58,3 +58,6 @@ local
 
 # contentlayer
 .contentlayer
+
+node_modules
+.env
