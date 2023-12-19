@@ -1,4 +1,5 @@
 import Image from 'next/image'
+
 import AboutImage from '@/public/images/about-01.jpg'
 
 export default function AboutIntro() {

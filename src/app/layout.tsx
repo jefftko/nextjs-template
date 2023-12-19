@@ -36,8 +36,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`bg-white tracking-tight text-gray-900 antialiased`}>
-        <div className="flex min-h-screen flex-col overflow-hidden supports-[overflow:clip]:overflow-clip">
+      <body className="bg-white tracking-tight text-gray-900 antialiased">
+        <div className="flex min-h-screen flex-col overflow-hidden supports-[overflow:clip]:text-clip">
           {children}
         </div>
       </body>

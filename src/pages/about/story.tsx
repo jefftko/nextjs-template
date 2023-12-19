@@ -1,4 +1,5 @@
 import Image from 'next/image'
+
 import AboutImage from '@/public/images/about-02.jpg'
 import AboutLogo from '@/public/images/about-logo.png'
 

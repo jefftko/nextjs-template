@@ -30,6 +30,8 @@ const Post = defineDocumentType(() => ({
   computedFields: {
     slug: {
       type: 'string',
+      // no-underscore-dangle is disabled because this is a special field
+      // eslint-disable-next-line no-underscore-dangle
       resolve: (doc) => doc._raw.flattenedPath,
     },
   },

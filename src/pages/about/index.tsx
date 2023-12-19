@@ -11,7 +11,7 @@ import Story from './story'
 
 export default function About() {
   return (
-    <Main meta={<Meta title="About - Simple" description="Page description" />}>
+    <Main meta={<Meta title="About-Simple" description="Page description" />}>
       <Intro />
       <Story />
       <Stats />

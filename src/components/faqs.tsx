@@ -37,7 +37,7 @@ export default function Faqs() {
               incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
               exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </Accordion>
-            <span className="block border-t border-gray-200" aria-hidden="true"></span>
+            <span className="block border-t border-gray-200" aria-hidden="true" />
           </ul>
         </div>
       </div>
