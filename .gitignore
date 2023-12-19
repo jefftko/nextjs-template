@@ -55,3 +55,9 @@ local
 
 # vercel
 .vercel
+
+# contentlayer
+.contentlayer
+
+node_modules
+.env

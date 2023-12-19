@@ -28,7 +28,7 @@ const bundleAnalyzer = withBundleAnalyzer({
   },
 })
 */
-const config = withPlugins([[bundleAnalyzer], [withContentlayer]], {
+const config = withPlugins([[bundleAnalyzer, withContentlayer]], {
   eslint: {
     dirs: ['.'],
   },

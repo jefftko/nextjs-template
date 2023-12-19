@@ -30,6 +30,14 @@
         "project": "./tsconfig.json"
       },
       "rules": {
+        "react/no-unescaped-entities": "off",
+        "jsx-a11y/control-has-associated-label": "off",
+        "jsx-a11y/label-has-associated-control": "off",
+        "react/button-has-type": "off",
+        "@typescript-eslint/no-shadow": "off",
+        "react/no-array-index-key": "off",
+        "consistent-return": "off",
+        "array-callback-return": "off",
         "prettier/prettier": [
           "error",
           {
